@@ -8,20 +8,20 @@ services:
     volumes:
       - ./ib/IBController.ini:/root/IBController/IBController.ini
       - ./ib/jts.ini:/root/Jts/jts.ini
+      - ./.shared/IBController/Logs:/opt/IBController/Logs 
     environment:
-      - TZ=America/Chicago
-      # Variables pulled from /IBController/IBControllerGatewayStart.sh
-      - VNC_PASSWORD=1234 # CHANGEME
-      - TWS_MAJOR_VRSN=974
-      - IBC_INI=/root/IBController/IBController.ini
-      - IBC_PATH=/opt/IBController
-      - TWS_PATH=/root/Jts
-      - TWS_CONFIG_PATH=/root/Jts
-      - LOG_PATH=/opt/IBController/Logs
-      - JAVA_PATH=/opt/i4j_jres/1.8.0_152/bin # JRE is bundled starting with TWS 952 
-      - TRADING_MODE=paper # either paper or live
-      - TWSUSERID=fdemo # IB account
-      - TWSPASSWORD=demouser # IB account password
-      - FIXUSERID=
-      - FIXPASSWORD=
+      - TZ=${TZ}
+      - TWS_MAJOR_VRSN=${TWS_MAJOR_VRSN}
+      - VNC_PASSWORD=${VNC_PASSWORD}
+      - IBC_INI=${IBC_INI}
+      - IBC_PATH=${IBC_PATH}
+      - TWS_PATH=${TWS_PATH}
+      - TWS_CONFIG_PATH=${TWS_CONFIG_PATH}
+      - LOG_PATH=${LOG_PATH}
+      - JAVA_PATH=${JAVA_PATH}
+      - TRADING_MODE=${TRADING_MODE}
+      - TWSUSERID=${TWSUSERID}
+      - TWSPASSWORD=${TWSPASSWORD}
+      - FIXUSERID=${FIXUSERID}
+      - FIXPASSWORD=${FIXPASSWORD}
       - APP=GATEWAY

@@ -1,15 +1,22 @@
 # Interactive Brokers Gateway Docker
 
-IB Gateway running in Docker with [IB Controller](https://github.com/ib-controller/ib-controller/) and VNC
+IB Gateway running in Docker with [IB Controller](https://github.com/IbcAlpha/IBC) and VNC
+
+The fork adds support  for the IBC alpha version of the controller which is actively maintained and moves the docker image parameters to a .env file
+Tested and works with the versions below. This will promp your security device for login if you use the app, but TWS gateway > 974 have banned the always on behavior so daily
+re-login is still required.
+
 
 * TWS Gateway: v974.4g
-* IB Controller: v3.2.0
+* IBC Alpha: v3.8.2
 
 ### Docker Hub image
 
 * https://hub.docker.com/r/mvberg/ib-gateway-docker
 
 ### Getting Started
+
+Copy  .env.default -> .env and change the required parameters
 
 ```bash
 > git clone

@@ -3,6 +3,8 @@
 .settings/
 .groovy/
 .idea/
+.env
+.shared/
 
 bin/
 target/

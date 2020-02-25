@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-LABEL maintainer="Mike Ehrenberg <mvberg@gmail.com>"
+LABEL maintainer="Feras Salim <feribg@gmail.com>"
 
 RUN  apt-get update \
   && apt-get install -y wget \
@@ -23,9 +23,9 @@ RUN chmod a+x ibgateway-latest-standalone-linux-x64-v974.4g.sh
 # Setup  IBController
 RUN mkdir -p /opt/IBController/ && mkdir -p /root/IBController/Logs
 WORKDIR /opt/IBController/
-RUN wget -q http://cdn.quantconnect.com/interactive/IBController-QuantConnect-3.2.0.5.zip
-RUN unzip ./IBController-QuantConnect-3.2.0.5.zip
-RUN chmod -R u+x *.sh && chmod -R u+x Scripts/*.sh
+RUN wget -q https://github.com/IbcAlpha/IBC/releases/download/3.8.2/IBCLinux-3.8.2.zip
+RUN unzip ./IBCLinux-3.8.2.zip
+RUN chmod -R u+x *.sh && chmod -R u+x scripts/*.sh
 
 WORKDIR /
 
